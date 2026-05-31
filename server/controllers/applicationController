@@ -1,0 +1,33 @@
+const Application = require("../models/Application");
+
+exports.applyJob = async (req, res) => {
+  try {
+    const { candidateId, jobId } = req.body;
+
+    const existing = await Application.findOne({
+      candidateId,
+      jobId
+    });
+
+    if (existing) {
+      return res.status(400).json({
+        message: "Already Applied"
+      });
+    }
+
+    const application = await Application.create({
+      candidateId,
+      jobId,
+      status: "Pending"
+    });
+
+    res.status(201).json(application);
+
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      message: error.message
+    });
+  }
+};
