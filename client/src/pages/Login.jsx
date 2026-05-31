@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    const res = awaitaxios.post(
+    const res = await axios.post(
  "https://mern-recruitment-portal-2.onrender.com/api/auth/register"
 );
 
