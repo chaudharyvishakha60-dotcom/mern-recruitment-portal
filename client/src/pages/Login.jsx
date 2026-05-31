@@ -13,10 +13,9 @@ function Login() {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    const res = await axios.post(
-      "http://localhost:5000/api/auth/login",
-      form
-    );
+    const res = awaitaxios.post(
+ "https://mern-recruitment-portal-2.onrender.com/api/auth/register"
+);
 
     localStorage.setItem("token", res.data.token);
 

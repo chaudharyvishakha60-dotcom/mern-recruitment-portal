@@ -32,9 +32,8 @@ console.log("BUTTON CLICKED")
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        formData
-      );
+ "https://mern-recruitment-portal-2.onrender.com/api/auth/register"
+);
 
       console.log(res.data);
 
